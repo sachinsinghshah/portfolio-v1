@@ -54,14 +54,6 @@ export interface Experience {
   bullets: string[];
 }
 
-export interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-  company: string;
-  avatarInitials: string;
-}
-
 export interface NavLink {
   label: string;
   href: string;
