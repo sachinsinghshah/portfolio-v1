@@ -41,11 +41,6 @@ export interface ExperienceItem {
   description: string;
 }
 
-export interface Skill {
-  name: string;
-  category: 'frontend' | 'backend' | 'tools' | 'database' | 'cloud' | 'design';
-}
-
 export interface Experience {
   company: string;
   role: string;

@@ -209,8 +209,11 @@ section{position:relative}
 @keyframes spin{to{transform:rotate(360deg)}}
 .ring .node{position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);transform:translateX(-50%)}
 
-.avatar-main{position:relative;z-index:3;height:100%;width:auto;object-fit:contain;
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.6)) drop-shadow(0 0 40px rgba(59,130,246,.25));
+/* Circular portrait treatment — suits a real photo and reads as intentional inside the
+   orbital rings. For a transparent-cutout avatar, use: height:100%;width:auto;object-fit:contain;border-radius:0;border:0 */
+.avatar-main{position:relative;z-index:3;width:clamp(230px,30vw,360px);height:auto;aspect-ratio:1;
+  object-fit:cover;object-position:50% 18%;border-radius:50%;border:2px solid rgba(107,162,255,.55);
+  box-shadow:0 30px 50px rgba(0,0,0,.55),0 0 60px rgba(59,130,246,.4),inset 0 0 40px rgba(59,130,246,.2);
   animation:float 7s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
 
