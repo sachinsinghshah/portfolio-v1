@@ -15,6 +15,32 @@ export interface Project {
   year: number;
 }
 
+export interface ProjectCardMeta {
+  display: string;
+  category: string;
+  subtitle: string;
+  blurb?: string;
+  tags?: string[];
+}
+
+export interface SkillPlanet {
+  name: string;
+  icon: string;
+  ring: 1 | 2 | 3;
+  angle: string;
+  radius: number;
+  delay: string;
+}
+
+export interface ExperienceItem {
+  level: string;
+  icon: string;
+  date: string;
+  role: string;
+  org: string;
+  description: string;
+}
+
 export interface Skill {
   name: string;
   category: 'frontend' | 'backend' | 'tools' | 'database' | 'cloud' | 'design';

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sachin Singh Shah — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="sections.css"/>
+<link rel="stylesheet" href="tweaks.css"/>
+</head>
+<body>
+
+<!-- atmosphere -->
+<div class="fog"></div>
+<div class="grid-bg"></div>
+<canvas id="particles"></canvas>
+<div class="scanlines"></div>
+<div class="cur-ring"></div>
+<div class="cur-dot"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#home" class="logo" data-mag>
+      <span class="logo-mark">SS</span>
+      <span>Sachin<span style="color:var(--blue-soft)">.</span>dev</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary" data-mag data-hot>Let's Talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== SOCIAL RAIL ===== -->
+<div class="social-rail">
+  <a href="https://github.com/sachinsinghshah" target="_blank" data-hot aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+  <a href="https://linkedin.com/in/sachinsinghshah" target="_blank" data-hot aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34v-8H5.67v8h2.67zM7 9.13a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.21v-4.4c0-2.35-1.26-3.44-2.94-3.44-1.35 0-1.96.74-2.3 1.27v-1.09h-2.67c.04.75 0 8 0 8h2.67v-4.47c0-.24.02-.48.09-.65.19-.48.63-.97 1.37-.97.97 0 1.36.74 1.36 1.82v4.27h2.42z"/></svg></a>
+  <a href="https://twitter.com/sachinsinghshah" target="_blank" data-hot aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7.1L4.8 22H1.7l8-9.2L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 3.9H5.5L16.5 20z"/></svg></a>
+  <a href="mailto:sachinsinghshah@gmail.com" data-hot aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero sec-pad" id="home">
+  <div class="wrap hero-grid">
+    <div class="stage reveal">
+      <div class="stage-glow"></div>
+      <div class="ring r1"><span class="node"></span></div>
+      <div class="ring r2"><span class="node"></span></div>
+      <div class="ring r3"></div>
+      <div class="platform"></div>
+      <img class="avatar-main" src="assets/avatar-portrait.png" alt="Sachin Singh Shah"/>
+      <!-- floating tech chips -->
+      <div class="chip c1" data-float><i><svg viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="1.4"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></i>React</div>
+      <div class="chip c2" data-float><i><svg viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M8 7v10M8 7l8 11M16 7v8" stroke="#fff" stroke-width="1.5" fill="none"/></svg></i>Next.js</div>
+      <div class="chip c3" data-float><i style="background:#3178C6"><b style="font:700 11px var(--font-d);color:#fff">TS</b></i>TypeScript</div>
+      <div class="chip c4" data-float><i><svg viewBox="0 0 24 24" fill="#83CD29"><path d="M12 1.6 3 6.8v10.4l9 5.2 9-5.2V6.8L12 1.6zm0 3 6 3.46v6.9L12 18.4 6 14.96v-6.9L12 4.6z"/></svg></i>Node.js</div>
+      <div class="chip c5" data-float><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.3"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/></svg></i>PostgreSQL</div>
+      <div class="chip c6" data-float><i><svg viewBox="0 0 24 24" fill="#fff"><path d="M19 18 13 2h-2L5 18l1.5 1.2L12 7l4 9.5-3-.7-1 1.4 7 2.8z"/></svg></i>Prisma</div>
+    </div>
+
+    <div class="hero-copy">
+      <span class="kicker reveal"><span class="dot"></span>Full Stack Developer</span>
+      <h1 class="reveal" data-d="1">Building Digital<br/>Experiences That<br/><span class="alive">Feel Alive.</span></h1>
+      <p class="lead reveal" data-d="2">I craft modern, scalable and interactive web experiences with React, Next.js & Node — engineered for speed, built to feel alive.</p>
+      <div class="hero-actions reveal" data-d="3">
+        <a href="#projects" class="btn btn-primary" data-mag data-hot>View My Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost" data-mag data-hot>Let's Connect
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+        </a>
+      </div>
+      <div class="scroll-cue reveal" data-d="4"><span class="mouse"><span></span></span>Scroll to explore</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec-pad" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy">
+        <span class="kicker reveal"><span class="dot"></span>About Me</span>
+        <h3 class="reveal" data-d="1" style="margin-top:22px">Turning ideas into<br/>living software.</h3>
+        <p class="reveal" data-d="1">I'm Sachin — a Software Engineer at 8om Internet building React/Next.js applications with SSR & SSG. I love turning ideas into beautiful, interactive and performant web products that people actually enjoy using.</p>
+        <div class="checks reveal" data-d="2">
+          <div class="check"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>Clean &amp; scalable architecture</div>
+          <div class="check"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>40% faster load times via SSR &amp; CDN</div>
+          <div class="check"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>Design-systems &amp; reusable components</div>
+          <div class="check"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></i>CI/CD, Docker &amp; cloud deployment</div>
+        </div>
+        <a href="assets/Sachin-Singh-Shah-Resume.pdf" target="_blank" class="btn btn-ghost reveal" data-d="3" data-mag data-hot>Download Resume
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        </a>
+      </div>
+
+      <div class="workstation reveal" data-d="2">
+        <div class="ws-laptop">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="code" id="codeBlock">
+<span class="ln"><span class="c-com">// shipping experiences that feel alive</span></span>
+<span class="ln"><span class="c-key">const</span> <span class="c-var">dev</span> = <span class="c-fn">createDeveloper</span>({</span>
+<span class="ln">  <span class="c-var">name</span>: <span class="c-str">"Sachin Singh Shah"</span>,</span>
+<span class="ln">  <span class="c-var">stack</span>: [<span class="c-str">"Next.js"</span>, <span class="c-str">"Node"</span>, <span class="c-str">"TS"</span>],</span>
+<span class="ln">  <span class="c-var">passion</span>: <span class="c-str">"building the web"</span>,</span>
+<span class="ln">});</span>
+<span class="ln"></span>
+<span class="ln"><span class="c-fn">dev</span>.<span class="c-fn">ship</span>(<span class="c-str">"something great"</span>);</span>
+          </div>
+        </div>
+        <div class="ws-window w1 glass"><div class="v" data-count="40" data-suffix="%">0%</div><div class="l">faster loads</div></div>
+        <div class="ws-window w2 glass"><div class="v" data-count="30" data-suffix="+">0+</div><div class="l">UI components</div></div>
+      </div>
+    </div>
+
+    <!-- stats -->
+    <div class="stats">
+      <div class="stat glass reveal"><div class="num grad-text" data-count="3" data-suffix="+">0+</div><div class="lbl">Years Experience</div></div>
+      <div class="stat glass reveal" data-d="1"><div class="num grad-text" data-count="25" data-suffix="+">0+</div><div class="lbl">Projects Completed</div></div>
+      <div class="stat glass reveal" data-d="2"><div class="num grad-text" data-count="15" data-suffix="+">0+</div><div class="lbl">Technologies</div></div>
+      <div class="stat glass reveal" data-d="3"><div class="num grad-text" data-count="100" data-suffix="%">0%</div><div class="lbl">Client Satisfaction</div></div>
+    </div>
+
+    <!-- feature chips -->
+    <div class="features">
+      <div class="feature glass reveal"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><span>Pixel Perfect Design</span></div>
+      <div class="feature glass reveal" data-d="1"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><span>Performance Optimized</span></div>
+      <div class="feature glass reveal" data-d="2"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><span>Mobile Responsive</span></div>
+      <div class="feature glass reveal" data-d="3"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div><span>Interactive Animations</span></div>
+      <div class="feature glass reveal" data-d="4"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></div><span>Clean Code Architecture</span></div>
+      <div class="feature glass reveal" data-d="5"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div><span>Best Practices</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="sec-pad" id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal"><span class="dot"></span>My Skills</span>
+      <h2 class="reveal" data-d="1">Technologies I <span class="grad-text">Work With</span></h2>
+      <p class="reveal" data-d="2">A galaxy of tools I orbit daily to build modern, scalable and interactive applications.</p>
+    </div>
+
+    <div class="galaxy reveal" data-d="1">
+      <div class="orbit o1"><span class="node"></span></div>
+      <div class="orbit o2"><span class="node"></span></div>
+      <div class="orbit o3"></div>
+      <div class="galaxy-core">
+        <img src="assets/avatar-core.png" alt="Sachin"/>
+        <span class="core-label">SACHIN · CORE</span>
+      </div>
+      <!-- inner ring -->
+      <div class="ringset rs1">
+      <div class="planet" style="--r:200px;--a:-58deg;--dly:0s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="1.3"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></div><span class="nm">React</span></div></div></div>
+      <div class="planet" style="--r:200px;--a:66deg;--dly:.5s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.1"><circle cx="12" cy="12" r="10"/><path d="M8 7v10M8 7l8 11M16 7v8"/></svg></div><span class="nm">Next.js</span></div></div></div>
+      <div class="planet" style="--r:200px;--a:192deg;--dly:1s"><div class="spinner"><div class="body"><div class="ic" style="background:radial-gradient(circle at 34% 28%,#5b9bf0,#1f5bbf 70%)"><b style="font:700 18px var(--font-d);color:#fff;position:relative;z-index:1">TS</b></div><span class="nm">TypeScript</span></div></div></div>
+      </div>
+      <!-- mid ring -->
+      <div class="ringset rs2">
+      <div class="planet" style="--r:310px;--a:-22deg;--dly:.2s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="#83CD29"><path d="M12 1.6 3 6.8v10.4l9 5.2 9-5.2V6.8L12 1.6zm0 3 6 3.46v6.9L12 18.4 6 14.96v-6.9L12 4.6z"/></svg></div><span class="nm">Node.js</span></div></div></div>
+      <div class="planet" style="--r:310px;--a:58deg;--dly:.7s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/></svg></div><span class="nm">PostgreSQL</span></div></div></div>
+      <div class="planet" style="--r:310px;--a:160deg;--dly:1.2s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M19 18 13 2h-2L5 18l1.5 1.2L12 7l4 9.5-3-.7-1 1.4 7 2.8z"/></svg></div><span class="nm">Prisma</span></div></div></div>
+      <div class="planet" style="--r:310px;--a:238deg;--dly:.9s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 6c-2.7 0-4.3 1.3-5 4 1-1.3 2.2-1.8 3.5-1.5.74.18 1.27.72 1.86 1.32C13.3 10.7 14.4 11.8 16.5 11.8c2.7 0 4.3-1.3 5-4-1 1.3-2.2 1.8-3.5 1.5-.74-.18-1.27-.72-1.86-1.32C15.2 7.1 14.1 6 12 6zM6.5 12.2c-2.7 0-4.3 1.3-5 4 1-1.3 2.2-1.8 3.5-1.5.74.18 1.27.72 1.86 1.32C7.8 16.9 8.9 18 11 18c2.7 0 4.3-1.3 5-4-1 1.3-2.2 1.8-3.5 1.5-.74-.18-1.27-.72-1.86-1.32-.94-.96-2.04-2.06-4.14-2.06z"/></svg></div><span class="nm">Tailwind</span></div></div></div>
+      </div>
+      <!-- outer ring -->
+      <div class="ringset rs3">
+      <div class="planet" style="--r:420px;--a:18deg;--dly:.4s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="#4DB33D"><path d="M12 2c1 4 4 5 4 10 0 4-2 6-4 8-2-2-4-4-4-8 0-5 3-6 4-10z"/></svg></div><span class="nm">MongoDB</span></div></div></div>
+      <div class="planet" style="--r:420px;--a:146deg;--dly:1.1s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2496ED" stroke-width="1.3"><rect x="3" y="10" width="4" height="4"/><rect x="8" y="10" width="4" height="4"/><rect x="8" y="5" width="4" height="4"/><rect x="13" y="10" width="4" height="4"/><path d="M3 17c4 2 13 1 16-5 1 1 2 1 2 1"/></svg></div><span class="nm">Docker</span></div></div></div>
+      <div class="planet" style="--r:420px;--a:302deg;--dly:.6s"><div class="spinner"><div class="body"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FF9900" stroke-width="1.3"><path d="M4 13c5 4 11 4 16 0M3 16c6 4 12 4 18 0M7 8h4l2 3"/></svg></div><span class="nm">AWS</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- mobile fallback -->
+    <div class="skill-fallback">
+      <div class="ic glass">React</div><div class="ic glass">Next.js</div><div class="ic glass">TypeScript</div>
+      <div class="ic glass">Node.js</div><div class="ic glass">PostgreSQL</div><div class="ic glass">Prisma</div>
+      <div class="ic glass">Tailwind</div><div class="ic glass">MongoDB</div><div class="ic glass">Docker</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="sec-pad" id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal"><span class="dot"></span>My Work</span>
+      <h2 class="reveal" data-d="1">Featured <span class="grad-text">Projects</span></h2>
+      <p class="reveal" data-d="2">A collection of products that showcase my passion for building exceptional, real-world software.</p>
+    </div>
+
+    <!-- featured -->
+    <div class="proj-featured glass reveal" style="padding:40px">
+      <div class="feat-info">
+        <div class="pnum">01</div>
+        <h3>LawlyAI — Legal SaaS</h3>
+        <p>An AI-powered legal automation platform that generates contracts, tracks compliance deadlines and delivers expert guidance. Built with Next.js, TypeScript & Tailwind for modern businesses.</p>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">AI</span></div>
+        <div class="feat-actions">
+          <a href="#" class="btn btn-primary" data-mag data-hot>Live Demo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a href="#" class="btn btn-ghost" data-mag data-hot>Code
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="laptop reveal" data-d="2">
+        <div class="laptop-screen" data-tilt>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="shot"><img src="assets/proj-lawly.png" alt="LawlyAI"/></div>
+        </div>
+        <div class="laptop-base"></div>
+        <div class="laptop-glow"></div>
+      </div>
+    </div>
+
+    <!-- grid -->
+    <div class="proj-grid" style="margin-top:24px">
+      <a href="https://chatifyv1.8bitcode.in/" target="_blank" class="pcard glass reveal" data-tilt data-hot>
+        <span class="badge">Full Stack</span>
+        <div class="shot"><img src="assets/proj-chatify.png" alt="Chatify"/></div>
+        <div class="meta"><h4>Chatify</h4><span>MERN · Socket.IO · JWT</span></div>
+      </a>
+      <a href="#" class="pcard glass reveal" data-d="1" data-tilt data-hot>
+        <span class="badge">Web App</span>
+        <div class="shot"><img src="assets/proj-shah.png" alt="Shah Properties"/></div>
+        <div class="meta"><h4>Shah Properties</h4><span>Next.js · Real Estate Platform</span></div>
+      </a>
+      <a href="#" class="pcard glass reveal" data-d="2" data-tilt data-hot>
+        <span class="badge">AI / API</span>
+        <div class="shot"><img src="assets/proj-webscraping.png" alt="WebScrapingHQ"/></div>
+        <div class="meta"><h4>WebScrapingHQ</h4><span>AI Scraping API · DaaS</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="sec-pad" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal"><span class="dot"></span>My Journey</span>
+      <h2 class="reveal" data-d="1">The Path So <span class="grad-text">Far</span></h2>
+      <p class="reveal" data-d="2">Every milestone, a new level unlocked on the way to building better software.</p>
+    </div>
+
+    <div class="path-wrap">
+      <div class="path-line"></div>
+      <div class="milestone reveal">
+        <div class="ms-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="ms-level">LVL 03</span>
+        <div class="glass">
+          <div class="ms-date">May 2023 — Present</div>
+          <div class="ms-row"><h4>Software Engineer</h4><span class="org">@ 8om Internet</span></div>
+          <p>Architecting React/Next.js apps with SSR &amp; SSG (40% faster loads), a 30+ component TypeScript library, Turborepo monorepo and GitHub Actions CI/CD — while mentoring junior developers.</p>
+        </div>
+      </div>
+      <div class="milestone reveal" data-d="1">
+        <div class="ms-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></div>
+        <span class="ms-level">LVL 02</span>
+        <div class="glass">
+          <div class="ms-date">2023</div>
+          <div class="ms-row"><h4>Full Stack Certification</h4><span class="org">@ 100xDevs</span></div>
+          <p>Completed an intensive Full Stack Web Development program — mastering the modern MERN &amp; Next.js ecosystem end-to-end, from databases to deployment.</p>
+        </div>
+      </div>
+      <div class="milestone reveal" data-d="2">
+        <div class="ms-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></div>
+        <span class="ms-level">LVL 01</span>
+        <div class="glass">
+          <div class="ms-date">2015 — 2019</div>
+          <div class="ms-row"><h4>B.Tech, Computer Science</h4><span class="org">@ MITRC, Alwar</span></div>
+          <p>Built the foundations — algorithms, systems and a love for turning logic into living, interactive software that people use.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec-pad" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="kicker reveal"><span class="dot"></span>Get In Touch</span>
+        <div class="globe-wrap reveal" data-d="1" style="margin-top:30px;justify-content:flex-start">
+          <div class="globe">
+            <div class="g-globe"></div>
+            <div class="g-sweep"></div>
+            <span class="blip b1"></span>
+            <span class="blip b2"></span>
+            <span class="blip b3"></span>
+            <div class="g-core"></div>
+          </div>
+          <div class="g-orbit oa"></div>
+          <div class="g-orbit ob"></div>
+          <div class="g-sat sa"><div class="rot"><i></i></div></div>
+          <div class="g-sat sb"><div class="rot"><i></i></div></div>
+        </div>
+        <h3 class="reveal" data-d="1">Let's Build<br/>Something Great.</h3>
+        <p class="reveal" data-d="2">Have a project in mind, or just want to say hi? My inbox is always open — let's create something that feels alive.</p>
+        <div class="contact-list reveal" data-d="2">
+          <a class="citem glass" href="mailto:sachinsinghshah@gmail.com" data-hot><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div class="ct"><div class="k">Email</div><div class="v">sachinsinghshah@gmail.com</div></div></a>
+          <a class="citem glass" href="https://github.com/sachinsinghshah" target="_blank" data-hot><div class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></div><div class="ct"><div class="k">GitHub</div><div class="v">github.com/sachinsinghshah</div></div></a>
+          <a class="citem glass" href="tel:+918290521542" data-hot><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2H7a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0 1 22 16.9z"/></svg></div><div class="ct"><div class="k">Location</div><div class="v">India · Open to Relocate</div></div></a>
+        </div>
+      </div>
+
+      <form class="form glass reveal" data-d="1" id="contactForm" novalidate>
+        <div class="row">
+          <div class="field"><label>Your Name</label><input type="text" name="name" placeholder="Jane Doe" required/></div>
+          <div class="field"><label>Your Email</label><input type="email" name="email" placeholder="jane@company.com" required/></div>
+        </div>
+        <div class="field"><label>Subject</label><input type="text" name="subject" placeholder="Let's work together"/></div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
+        <button type="submit" class="btn btn-primary" data-mag data-hot>Send Message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <div class="form-note" id="formNote"></div>
+      </form>
+    </div>
+
+    <div class="dock-glow"></div>
+    <div class="dock">
+      <a href="https://github.com/sachinsinghshah" target="_blank" data-mag data-hot aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+      <a href="https://linkedin.com/in/sachinsinghshah" target="_blank" data-mag data-hot aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34v-8H5.67v8h2.67zM7 9.13a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.21v-4.4c0-2.35-1.26-3.44-2.94-3.44-1.35 0-1.96.74-2.3 1.27v-1.09h-2.67c.04.75 0 8 0 8h2.67v-4.47c0-.24.02-.48.09-.65.19-.48.63-.97 1.37-.97.97 0 1.36.74 1.36 1.82v4.27h2.42z"/></svg></a>
+      <a href="https://twitter.com/sachinsinghshah" target="_blank" data-mag data-hot aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7.1L4.8 22H1.7l8-9.2L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 3.9H5.5L16.5 20z"/></svg></a>
+      <a href="mailto:sachinsinghshah@gmail.com" data-mag data-hot aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p>Designed &amp; built by Sachin Singh Shah <span class="heart">◆</span> Crafted to feel alive · 2026</p></div>
+</footer>
+
+<script src="script.js"></script>
+<script src="tweaks.js"></script>
+</body>
+</html>
