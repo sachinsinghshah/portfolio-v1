@@ -1,151 +1,52 @@
 # Sachin Singh Shah — Developer Portfolio
 
-A production-ready, interactive developer portfolio built with Next.js 16, TypeScript, Tailwind CSS v4, and Motion v12.
-
-**Live:** [shah-properties.vercel.app](https://shah-properties.vercel.app) *(update with your portfolio URL once deployed)*
-
----
+A single-page, dark "holographic" developer portfolio built with Next.js 16, TypeScript, and Tailwind CSS v4 — neon glassmorphism, an avatar orbital stage, an orbiting skills galaxy, a glass project showcase, a game-level experience path, and a radar contact globe.
 
 ## Tech Stack
 
 | Package | Version | Purpose |
-|---------|---------|---------|
+|---|---|---|
 | `next` | 16.1.6 | App Router, Image optimisation, SSG |
 | `react` / `react-dom` | 19.2.3 | UI rendering |
-| `motion` | ^12.x | Animations — imported from `"motion/react"` |
-| `lucide-react` | ^0.577.x | Icons |
-| `tailwindcss` | ^4 | Styling — configured via `@theme` in `globals.css` |
-
----
+| `tailwindcss` | ^4 | Preflight + utilities (design system lives in `globals.css`) |
+| `next/font` | — | Space Grotesk (display), Sora (body), JetBrains Mono (mono) |
 
 ## Getting Started
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
+npm run dev        # http://localhost:3000
+npm run build && npm run start
+npm run test:e2e   # Playwright smoke tests
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
-
-```bash
-# Production build
-npm run build
-npm run start
-```
-
----
-
-## Project Structure
+## Structure
 
 ```
 src/
-├── app/
-│   ├── layout.tsx          # Root layout — metadata, Navbar, Footer, CustomCursor
-│   ├── page.tsx            # Home page — renders all sections
-│   └── globals.css         # CSS variables, Tailwind theme, animations
+├── app/                layout.tsx · page.tsx · globals.css (full design system)
 ├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx      # Sticky nav, glass effect on scroll, mobile menu
-│   │   ├── Footer.tsx      # Social links, back-to-top
-│   │   ├── CustomCursor.tsx # Desktop-only dot + ring cursor (requestAnimationFrame)
-│   │   └── PageTransition.tsx # Accent curtain wipe on load
-│   ├── sections/
-│   │   ├── Hero.tsx        # Letter-by-letter name animation, dot grid background
-│   │   ├── About.tsx       # Bio, avatar photo, tech ticker marquee
-│   │   ├── Projects.tsx    # Bento grid with live screenshot cards + modal
-│   │   ├── Skills.tsx      # Tabbed skill categories with AnimatePresence
-│   │   ├── Experience.tsx  # Vertical timeline
-│   │   ├── Testimonials.tsx # Auto-scrolling marquee
-│   │   └── Contact.tsx     # Validated form, social links, copy-email easter egg
-│   └── ui/
-│       ├── ProjectModal.tsx # Full project detail overlay (shows 🔒 for private repos)
-│       ├── SectionHeading.tsx # Reusable animated section title
-│       ├── TechBadge.tsx   # Tech pill badge
-│       └── ThemeToggle.tsx # Dark/light toggle
-├── data/
-│   ├── siteConfig.ts       # Personal info, social links, nav links
-│   └── projects.ts         # All project data
-├── lib/
-│   └── utils.ts            # cn() class merger, scrollToSection()
-└── types/
-    └── index.ts            # TypeScript interfaces
+│   ├── layout/         Background, SiteInteractions, Navbar, SocialRail, Footer
+│   ├── sections/       Hero, About, Skills, Projects, Experience, Contact
+│   └── ui/             icons.tsx (all inline SVGs)
+├── data/               siteConfig.ts · projects.ts (+ projectShowcase) · skills.ts · experience.ts
+├── lib/                utils.ts
+└── types/              index.ts
 ```
 
----
+- **Design system & all animations:** `src/app/globals.css` — ported from the approved design archived in `docs/design-reference/v2/`.
+- **Global interactions** (particle constellation, custom cursor, magnetic buttons, 3D tilt, scroll-reveal, count-ups, hero parallax): `src/components/layout/SiteInteractions.tsx`.
+- **Content:** edit `src/data/*`. Project screenshots live in `public/screenshots/<slug>.png`; avatars in `public/v2/`.
+- Dark only. Respects `prefers-reduced-motion`. The contact form is front-end only (no backend).
 
-## Customisation
+## Avatar note
 
-All personal content lives in **2 files** and the `public/` folder.
-
-### `src/data/siteConfig.ts`
-Update your name, title, tagline, email, resume URL, and social links.
-
-### `src/data/projects.ts`
-Each project has: `slug`, `title`, `tagline`, `description`, `problem`, `solution`, `result`, `techStack`, `features`, `liveUrl`, `githubUrl`, `gradient`, `year`.
-
-> Set `githubUrl: ""` for private/company projects — the modal will show a 🔒 badge instead of the source code button.
-
-### `src/components/sections/Experience.tsx`
-Edit the `experiences` array directly in the file.
-
-### `src/components/sections/Skills.tsx`
-Edit the `skillsData` object — keys become tab labels, values are skill name arrays.
-
-### `src/components/sections/About.tsx`
-Edit the three bio paragraphs. Update the `techs` array for the ticker.
-
-### `src/components/sections/Testimonials.tsx`
-Edit the `testimonials` array.
-
-### Public Assets
-
-| File | Purpose |
-|------|---------|
-| `public/avatar.jpeg` | Profile photo shown in About section |
-| `public/resume.pdf` | Resume linked from About section |
-| `public/screenshots/` | Live website screenshots for project cards |
-
----
-
-## Refreshing Screenshots
-
-Screenshots are captured once and stored as static files. Re-run whenever a live project updates:
-
-```bash
-npm run capture
-rm -rf .next/cache/images
-npm run dev
-```
-
-The script fetches screenshots from [thum.io](https://thum.io) (free, no API key) and saves them to `public/screenshots/`.
-
----
+The hero/galaxy avatars live in `public/v2/` as transparent-cutout PNGs
+(`avatar-portrait.png`, `avatar-core.png`). The hero (`.avatar-main`) renders the cutout
+floating inside the orbital rings (`object-fit:contain` + drop-shadow); the galaxy core crops
+its image into the circular core (`object-fit:cover`). Swap the files in place to change the
+photo — keep them as transparent cutouts so the hero figure reads against the background.
 
 ## Deployment
 
-1. Push to GitHub
-2. Go to [vercel.com](https://vercel.com) → **Add New Project** → import the repo
-3. Vercel auto-detects Next.js — no config needed
-4. Click **Deploy**
-
----
-
-## Features
-
-- Dark / light theme toggle (CSS variables, no localStorage)
-- Custom cursor with lerp following — desktop only (pointer: fine)
-- Page load curtain animation
-- Letter-by-letter hero name animation
-- Bento grid project cards with live website screenshots
-- Project detail modal with problem / solution / result breakdown
-- Private repo support — shows 🔒 badge instead of broken GitHub link
-- Vertical experience timeline
-- Tabbed skills section with AnimatePresence transitions
-- Auto-scrolling testimonial marquee
-- Contact form with client-side validation and success state
-- Copy email easter egg
-- Scroll progress, smooth scroll, skip-to-content link
-- Fully typed with TypeScript — no `any` types
+Push to GitHub and import on Vercel — Next.js is auto-detected, no config needed.

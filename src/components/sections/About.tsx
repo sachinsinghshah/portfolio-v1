@@ -1,158 +1,146 @@
-"use client";
-
-import { motion } from "motion/react";
-import Image from "next/image";
-import { Download } from "lucide-react";
+import { CheckIcon, DownloadIcon, FeatureIcon } from "@/components/ui/icons";
 import { siteConfig } from "@/data/siteConfig";
-import SectionHeading from "@/components/ui/SectionHeading";
 
-const techs = [
-  "React.js", "Next.js", "TypeScript", "Python", "Node.js",
-  "PostgreSQL", "MongoDB", "Docker", "AWS", "Playwright",
-  "GraphQL", "Tailwind CSS", "Prisma ORM", "GitHub Actions",
-  "Turborepo", "Socket.IO", "Astro", "Digital Ocean",
+const checks = [
+  "Clean & scalable architecture",
+  "40% faster load times via SSR & CDN",
+  "Design-systems & reusable components",
+  "CI/CD, Docker & cloud deployment",
+];
+
+const stats = [
+  { count: 3, suffix: "+", label: "Years Experience" },
+  { count: 25, suffix: "+", label: "Projects Completed" },
+  { count: 15, suffix: "+", label: "Technologies" },
+  { count: 100, suffix: "%", label: "Client Satisfaction" },
+];
+
+const features = [
+  { icon: "pixel", label: "Pixel Perfect Design" },
+  { icon: "perf", label: "Performance Optimized" },
+  { icon: "mobile", label: "Mobile Responsive" },
+  { icon: "anim", label: "Interactive Animations" },
+  { icon: "arch", label: "Clean Code Architecture" },
+  { icon: "best", label: "Best Practices" },
 ];
 
 export default function About() {
-  const tickerItems = [...techs, ...techs];
-
   return (
-    <section
-      id="about"
-      style={{
-        padding: "100px 24px",
-        maxWidth: "1200px",
-        margin: "0 auto",
-      }}
-    >
-      <SectionHeading title="About Me" />
-
-      {/* Split layout */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "48px",
-          marginBottom: "64px",
-        }}
-        className="about-grid"
-      >
-        {/* Left: text */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p style={{ color: "var(--text-secondary)", fontSize: "17px", lineHeight: 1.8, marginBottom: "16px" }}>
-            I&apos;m a software engineer currently building production systems at <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>8om Internet</span>. I work across the full stack — from Python scraping pipelines and REST APIs on the backend to React and Next.js interfaces on the frontend — and I care about every layer in between. I hold a B.Tech in Computer Science and have been writing production code professionally since 2023.
-          </p>
-          <p style={{ color: "var(--text-secondary)", fontSize: "17px", lineHeight: 1.8, marginBottom: "16px" }}>
-            My approach is straightforward: understand the problem deeply before writing a single line, build systems that are fast and maintainable, and sweat the details that users actually feel — page load times, intuitive flows, error states that help instead of confuse. I&apos;ve shipped everything from AI-powered web scraping platforms and legal SaaS tools to real estate listing sites and real-time chat applications.
-          </p>
-          <p style={{ color: "var(--text-secondary)", fontSize: "17px", lineHeight: 1.8, marginBottom: "32px" }}>
-            I&apos;m open to relocation and genuinely excited by hard problems. When I&apos;m not at the keyboard I&apos;m usually reading about system design, exploring new tools, or thinking about the next thing I want to build.
-          </p>
-
-          <motion.a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "var(--accent)",
-              color: "white",
-              padding: "12px 24px",
-              borderRadius: "8px",
-              textDecoration: "none",
-              fontWeight: 600,
-              fontSize: "15px",
-            }}
-          >
-            <Download size={16} />
-            Download Resume
-          </motion.a>
-        </motion.div>
-
-        {/* Right: avatar placeholder */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="about-avatar-wrap"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            className="float-animation"
-            style={{
-              width: "260px",
-              height: "320px",
-              borderRadius: "20px",
-              overflow: "hidden",
-              flexShrink: 0,
-              border: "2px solid var(--border)",
-              position: "relative",
-            }}
-          >
-            <Image
-              src="/avatar.jpeg"
-              alt={siteConfig.name}
-              fill
-              style={{ objectFit: "cover", objectPosition: "center top" }}
-              sizes="260px"
-              priority
-            />
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Tech ticker */}
-      <div
-        style={{
-          overflow: "hidden",
-          maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-        }}
-      >
-        <div className="ticker-track">
-          {tickerItems.map((tech, i) => (
-            <span
-              key={i}
-              style={{
-                display: "inline-block",
-                padding: "6px 16px",
-                margin: "0 6px",
-                borderRadius: "999px",
-                border: "1px solid var(--border)",
-                color: "var(--text-secondary)",
-                fontSize: "13px",
-                fontFamily: "var(--font-mono)",
-                whiteSpace: "nowrap",
-                background: "var(--bg-secondary)",
-              }}
-            >
-              {tech}
+    <section className="sec-pad" id="about">
+      <div className="wrap">
+        <div className="about-grid">
+          <div className="about-copy">
+            <span className="kicker reveal">
+              <span className="dot" />
+              About Me
             </span>
+            <h3 className="reveal" data-d="1" style={{ marginTop: 22 }}>
+              Turning ideas into
+              <br />
+              living software.
+            </h3>
+            <p className="reveal" data-d="1">
+              I&apos;m Sachin — a Software Engineer at 8om Internet building React/Next.js applications with SSR &amp;
+              SSG. I love turning ideas into beautiful, interactive and performant web products that people actually
+              enjoy using.
+            </p>
+            <div className="checks reveal" data-d="2">
+              {checks.map((c) => (
+                <div className="check" key={c}>
+                  <i>
+                    <CheckIcon />
+                  </i>
+                  {c}
+                </div>
+              ))}
+            </div>
+            <a
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-ghost reveal"
+              data-d="3"
+              data-mag
+              data-hot
+            >
+              Download Resume <DownloadIcon />
+            </a>
+          </div>
+
+          <div className="workstation reveal" data-d="2">
+            <div className="ws-laptop">
+              <div className="bar">
+                <i />
+                <i />
+                <i />
+              </div>
+              <div className="code" id="codeBlock">
+                <span className="ln">
+                  <span className="c-com">{"// shipping experiences that feel alive"}</span>
+                </span>
+                <span className="ln">
+                  <span className="c-key">const</span> <span className="c-var">dev</span> ={" "}
+                  <span className="c-fn">createDeveloper</span>
+                  {"({"}
+                </span>
+                <span className="ln">
+                  {"  "}
+                  <span className="c-var">name</span>: <span className="c-str">{'"Sachin Singh Shah"'}</span>,
+                </span>
+                <span className="ln">
+                  {"  "}
+                  <span className="c-var">stack</span>: [<span className="c-str">{'"Next.js"'}</span>,{" "}
+                  <span className="c-str">{'"Node"'}</span>, <span className="c-str">{'"TS"'}</span>],
+                </span>
+                <span className="ln">
+                  {"  "}
+                  <span className="c-var">passion</span>: <span className="c-str">{'"building the web"'}</span>,
+                </span>
+                <span className="ln">{"});"}</span>
+                <span className="ln" />
+                <span className="ln">
+                  <span className="c-fn">dev</span>.<span className="c-fn">ship</span>(
+                  <span className="c-str">{'"something great"'}</span>);
+                </span>
+              </div>
+            </div>
+            <div className="ws-window w1 glass">
+              <div className="v" data-count="40" data-suffix="%">
+                0%
+              </div>
+              <div className="l">faster loads</div>
+            </div>
+            <div className="ws-window w2 glass">
+              <div className="v" data-count="30" data-suffix="+">
+                0+
+              </div>
+              <div className="l">UI components</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="stats">
+          {stats.map((s, i) => (
+            <div className="stat glass reveal" data-d={i === 0 ? undefined : String(i)} key={s.label}>
+              <div className="num grad-text" data-count={s.count} data-suffix={s.suffix}>
+                {`0${s.suffix}`}
+              </div>
+              <div className="lbl">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="features">
+          {features.map((f, i) => (
+            <div className="feature glass reveal" data-d={i === 0 ? undefined : String(i)} key={f.label}>
+              <div className="fi">
+                <FeatureIcon name={f.icon} />
+              </div>
+              <span>{f.label}</span>
+            </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (min-width: 768px) {
-          .about-grid {
-            grid-template-columns: 3fr 2fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

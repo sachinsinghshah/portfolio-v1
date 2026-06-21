@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project, ProjectCardMeta } from "@/types";
 
 export const projects: Project[] = [
   {
@@ -142,3 +142,25 @@ export const projects: Project[] = [
     year: 2024,
   },
 ];
+
+export const projectShowcase: {
+  featuredSlug: string;
+  cardSlugs: string[];
+  meta: Record<string, ProjectCardMeta>;
+} = {
+  featuredSlug: "lawly-ai-saas",
+  cardSlugs: ["chat-app-v1", "shah-properties", "webscrapinghq"],
+  meta: {
+    "lawly-ai-saas": {
+      display: "LawlyAI — Legal SaaS",
+      category: "AI / SaaS",
+      subtitle: "Next.js · TypeScript · AI",
+      blurb:
+        "An AI-powered legal automation platform that generates contracts, tracks compliance deadlines and delivers expert guidance. Built with Next.js, TypeScript & Tailwind for modern businesses.",
+      tags: ["Next.js", "TypeScript", "Tailwind", "AI"],
+    },
+    "chat-app-v1": { display: "Chatify", category: "Full Stack", subtitle: "MERN · Socket.IO · JWT" },
+    "shah-properties": { display: "Shah Properties", category: "Web App", subtitle: "Next.js · Real Estate Platform" },
+    "webscrapinghq": { display: "WebScrapingHQ", category: "AI / API", subtitle: "AI Scraping API · DaaS" },
+  },
+};
