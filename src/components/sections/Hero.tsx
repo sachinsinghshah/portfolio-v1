@@ -15,7 +15,7 @@ export default function Hero() {
           </div>
           <div className="ring r3" aria-hidden />
           <div className="platform" aria-hidden />
-          <Image className="avatar-main" src="/v2/avatar-portrait.png" alt="Sachin Singh Shah" width={520} height={760} priority />
+          <Image className="avatar-main" src="/v2/avatar-portrait.png" alt="Sachin Singh Shah" width={685} height={1016} priority />
           <div className="chip c1" data-float>
             <i>
               <TechIcon name="react" />

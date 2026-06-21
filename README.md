@@ -41,11 +41,11 @@ src/
 
 ## Avatar note
 
-The hero/galaxy avatars in `public/v2/` are currently the real profile photo (rendered as a
-circular portrait). To use a transparent-cutout avatar, drop the PNGs into `public/v2/`
-(`avatar-portrait.png`, `avatar-core.png`); for an edge-to-edge cutout in the hero, revert the
-`.avatar-main` rule in `globals.css` to `height:100%;width:auto;object-fit:contain` (see the
-comment there).
+The hero/galaxy avatars live in `public/v2/` as transparent-cutout PNGs
+(`avatar-portrait.png`, `avatar-core.png`). The hero (`.avatar-main`) renders the cutout
+floating inside the orbital rings (`object-fit:contain` + drop-shadow); the galaxy core crops
+its image into the circular core (`object-fit:cover`). Swap the files in place to change the
+photo — keep them as transparent cutouts so the hero figure reads against the background.
 
 ## Deployment
 
