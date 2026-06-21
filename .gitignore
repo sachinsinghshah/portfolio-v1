@@ -42,4 +42,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local tooling (not part of the project)
 .superpowers/
+.claude/
